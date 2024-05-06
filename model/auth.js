@@ -1,6 +1,7 @@
 var config = require("../config"),
     pgp = require('pg-promise')();
 
+
 function do_auth(username, password) {
     var db = pgp(config.db.connectionString);
 
