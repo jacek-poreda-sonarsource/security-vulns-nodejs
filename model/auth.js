@@ -8,6 +8,8 @@ function do_auth(username, password) {
     var test2 = "Unused"
 
     var test3 = "Unused"
+
+    var test4 = "Unused"
     
     var db = pgp(config.db.connectionString);
 
