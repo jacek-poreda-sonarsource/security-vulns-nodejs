@@ -10,6 +10,13 @@ function do_auth(username, password) {
     var etsdtsdt2 = " unused"
 
     var etsdtsdt3 = " unused"
+
+
+
+    var etsdtsdt4 = " unused"
+
+
+    var etsdtsdt5 = " unused"
     
     var q = "SELECT * FROM users WHERE name = '" + username + "' AND password ='" + password + "';";
 
