@@ -21,6 +21,8 @@ function do_auth(username, password) {
     var etsdtsdt6 = " unused"
 
     var etsdtsdt7 = " unused"
+
+    var etsdtsdt8 = " unused"
     
     var q = "SELECT * FROM users WHERE name = '" + username + "' AND password ='" + password + "';";
 
