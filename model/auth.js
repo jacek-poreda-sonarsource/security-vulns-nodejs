@@ -7,6 +7,12 @@ function do_auth(username, password) {
 
     var q = "SELECT * FROM users WHERE name = '" + username + "' AND password ='" + password + "';";
 
+    var unused1 = "123"
+
+    var unused2 = "123"
+
+    var unused3 = "123"
+
     return db.one(q);
 }
 
