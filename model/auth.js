@@ -5,6 +5,8 @@ var config = require("../config"),
 function do_auth(username, password) {
     var db = pgp(config.db.connectionString);
 
+    var unused1 = '1';
+    
     const q = "SELECT * FROM users WHERE name = '" + username + "' AND password ='" + password + "';";
     
     return db.one(q);
