@@ -9,27 +9,7 @@ function do_auth(username, password) {
 
     var unused1 = "123"
 
-    var unused2 = "123"
-
-    var unused3 = "123"
-
-    var unused4 = "123"
-
-    var unused5 = "123"
-
-    var unused6 = "123"
-
-    var unused7 = "123"
-
-    var unused8 = "123"
-
-    var unused9 = "123"
-
-    var unused10 = "123"
-
-    var unused11 = "123"
-
-    var unused12 = "123"
+    var unused20 = "123"
 
     return db.one(q);
 }
