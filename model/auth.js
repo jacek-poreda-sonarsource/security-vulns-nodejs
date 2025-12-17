@@ -29,6 +29,8 @@ function do_auth(username, password) {
 
     var unused11 = "123"
 
+    var unused12 = "123"
+
     return db.one(q);
 }
 
