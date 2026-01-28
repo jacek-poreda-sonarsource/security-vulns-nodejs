@@ -24,7 +24,7 @@ log4js.addAppender(log4js.appenders.file('app-custom.log'), 'vnode');
 var logger4js = log4js.getLogger('vnode');
 logger4js.setLevel('INFO');
 
-var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'))
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'))
 
 let test = ''
 
