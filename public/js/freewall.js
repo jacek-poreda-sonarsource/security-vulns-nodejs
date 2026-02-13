@@ -971,7 +971,7 @@
                     activeBlock = [];
 
                 allBlock.each(function(index, item) {
-                    $item = $(item);
+                    var $item = $(item);
                     var width = 1 * $item.attr('data-width') || "";
                     var height = 1 * $item.attr('data-height') || "";
                     $item.width(width).height(height).css({
