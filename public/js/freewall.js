@@ -1005,7 +1005,7 @@
                 name = name.toLowerCase();
                 if (events[name] && events[name].length) {
                     for (var handler of events[name]) {
-                        handler.call(this, object, setting);
+                    for (const handler of events[name]) {
                     }
                 }
                 return this;
