@@ -1012,16 +1012,12 @@
 
             fitHeight: function(height) {
 
-                let targetHeight = height || container.height() || $W.height();
-
                 this.fitZone('auto', height);
 
                 runtime.arguments = arguments;
             },
 
             fitWidth: function(width) {
-
-                let targetWidth = width || container.width() || $W.width();
 
                 this.fitZone(width, 'auto');
 
