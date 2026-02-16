@@ -955,7 +955,7 @@
 
             */
             appendHoles: function(holes) {
-                var newHoles = [].concat(holes), h = {}, i;
+                var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
                 for (i = 0; i < newHoles.length; ++i) {
                     h = newHoles[i];
                     runtime.holes[h.top + "-" + h.left + "-" + h.width + "-" + h.height] = h;
@@ -966,9 +966,7 @@
             container: container,
 
             destroy: function() {
-                var allBlock = container.find(setting.selector).removeAttr('id'),
-                    block = null,
-                    activeBlock = [];
+                var allBlock = container.find(setting.selector).removeAttr('id');
 
                 allBlock.each(function(index, item) {
                     $item = $(item);
@@ -984,7 +982,7 @@
                 if (arguments.length == 0) {
                     runtime.holes = {};
                 } else {
-                    var newHoles = [].concat(holes), h = {}, i;
+                    var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
                     for (i = 0; i < newHoles.length; ++i) {
                         h = newHoles[i];
                         delete runtime.holes[h.top + "-" + h.left + "-" + h.width + "-" + h.height];
@@ -1014,7 +1012,7 @@
 
             fitHeight: function(height) {
 
-                var height = height ? height : container.height() || $W.height();
+                var height = height || container.height() || $W.height();
 
                 this.fitZone('auto', height);
 
@@ -1023,7 +1021,7 @@
 
             fitWidth: function(width) {
 
-                var width = width ? width : container.width() || $W.width();
+                var width = width || container.width() || $W.width();
 
                 this.fitZone(width, 'auto');
 
@@ -1035,8 +1033,8 @@
                     block = null,
                     activeBlock = [];
 
-                height = height ? height : container.height() || $W.height();
-                width = width ? width : container.width() || $W.width();
+                height = height || container.height() || $W.height();
+                width = width || container.width() || $W.width();
 
                 runtime.arguments = arguments;
 
@@ -1160,7 +1158,7 @@
             */
 
             setHoles: function(holes) {
-                var newHoles = [].concat(holes), h = {}, i;
+                var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
                 runtime.holes = {};
                 for (i = 0; i < newHoles.length; ++i) {
                     h = newHoles[i];
