@@ -955,9 +955,8 @@
 
             */
             appendHoles: function(holes) {
-                var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
-                for (i = 0; i < newHoles.length; ++i) {
-                    h = newHoles[i];
+                const newHoles = Array.isArray(holes) ? holes : [holes];
+                for (const h of newHoles) {
                     runtime.holes[h.top + "-" + h.left + "-" + h.width + "-" + h.height] = h;
                 }
                 return this;
@@ -1006,7 +1005,7 @@
                 name = name.toLowerCase();
                 if (events[name] && events[name].length) {
                     for (var handler of events[name]) {
-                        handler.call(this, object, setting);
+                    for (const handler of events[name]) {
                     }
                 }
                 return this;
@@ -1015,7 +1014,7 @@
             fitHeight: function(height) {
 
                 var height = height || container.height() || $W.height();
-
+                const targetHeight = height || container.height() || $W.height();
                 this.fitZone('auto', height);
 
                 runtime.arguments = arguments;
@@ -1024,7 +1023,7 @@
             fitWidth: function(width) {
 
                 var width = width || container.width() || $W.width();
-
+                const targetWidth = width || container.width() || $W.width();
                 this.fitZone(width, 'auto');
 
                 runtime.arguments = arguments;
@@ -1161,7 +1160,7 @@
 
             setHoles: function(holes) {
                 var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
-                runtime.holes = {};
+                const newHoles = Array.isArray(holes) ? holes : [holes];
                 for (i = 0; i < newHoles.length; ++i) {
                     h = newHoles[i];
                     runtime.holes[h.top + "-" + h.left + "-" + h.width + "-" + h.height] = h;
