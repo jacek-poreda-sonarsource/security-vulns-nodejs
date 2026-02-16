@@ -12,7 +12,7 @@
         return src != null && src instanceof Function;
     });
 
-    var $W = $(window);
+    var $W = $(globalThis);
     var $D = $(document);
 
     var layoutManager = {
@@ -673,7 +673,7 @@
                     }
 
 
-                    if (block != null) {
+                    if (block) {
                         // resize block with free area;
                         if (block.resize) {
                             if (fitWidth) {
@@ -1267,6 +1267,6 @@
         return layoutManager[method];
     };
 
-    window.Freewall = window.freewall = Freewall;
+    globalThis.Freewall = globalThis.freewall = Freewall;
 
-})(window.Zepto || window.jQuery);
+})(globalThis.Zepto || globalThis.jQuery);
