@@ -1021,7 +1021,7 @@
 
             fitWidth: function(width) {
 
-                var width = width || container.width() || $W.width();
+                let targetWidth = width || container.width() || $W.width();
 
                 this.fitZone(width, 'auto');
 
