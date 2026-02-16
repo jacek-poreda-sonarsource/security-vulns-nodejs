@@ -71,7 +71,7 @@
             }
 
             isNaN(fixSize) && (fixSize = null);
-            var isFixedSize = !!fixSize;
+            const isFixedSize = !!fixSize;
             (fixSize == null) && (fixSize = setting.fixSize);
             var makeRound = (!fixSize) ? "round" : "ceil";
             // store original size;
