@@ -1158,7 +1158,7 @@
             */
 
             setHoles: function(holes) {
-                var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
+                let newHoles = Array.isArray(holes) ? holes : [holes], h, i;
                 runtime.holes = {};
                 for (i = 0; i < newHoles.length; ++i) {
                     h = newHoles[i];
