@@ -12,7 +12,7 @@
         return src != null && typeof src === 'function';
     });
 
-    var $W = $(globalThis);
+    const $W = $(globalThis);
     var $D = $(document);
 
     var layoutManager = {
