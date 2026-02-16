@@ -9,10 +9,10 @@
     });
 
     $.isFunction == null && ($.isFunction = function(src) {
-        return src != null && src instanceof Function;
+        return src != null && typeof src === 'function';
     });
 
-    var $W = $(window);
+    var $W = $(globalThis);
     var $D = $(document);
 
     var layoutManager = {
@@ -812,8 +812,6 @@
 
         function setDraggable(item) {
 
-            var gutterX = runtime.gutterX;
-            var gutterY = runtime.gutterY;
             var cellH = runtime.cellH;
             var cellW = runtime.cellW;
             var $item = $(item);
@@ -1267,6 +1265,6 @@
         return layoutManager[method];
     };
 
-    window.Freewall = window.freewall = Freewall;
+    globalThis.Freewall = globalThis.freewall = Freewall;
 
 })(window.Zepto || window.jQuery);
