@@ -58,7 +58,7 @@
             var $item = $(item);
             var active = $item.data("active");
             var fixPos = $item.attr('data-position');
-            var fixSize = Number.parseInt($item.attr('data-fixSize'), 10);
+            let fixSize = Number.parseInt($item.attr('data-fixSize'), 10);
             var blockId = runtime.lastId++ + '-' + runtime.totalGrid;
 
             //ignore dragging block;
