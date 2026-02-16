@@ -12,8 +12,8 @@
         return src != null && src instanceof Function;
     });
 
-    var $W = $(globalThis);
-    var $D = $(document);
+    const $W = $(globalThis);
+    const $D = $(document);
 
     var layoutManager = {
         // default setting;
