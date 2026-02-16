@@ -71,6 +71,7 @@
             }
 
             isNaN(fixSize) && (fixSize = null);
+            var isFixedSize = !!fixSize;
             (fixSize == null) && (fixSize = setting.fixSize);
             var makeRound = (!fixSize) ? "round" : "ceil";
             // store original size;
@@ -88,26 +89,26 @@
                 height = $item.height();
             }
 
-            var col = !width ? 0 : Math[makeRound]((width + gutterX) / cellW);
-            var row = !height ? 0 : Math[makeRound]((height + gutterY) / cellH);
+            var col = width ? Math[makeRound]((width + gutterX) / cellW) : 0;
+            var row = height ? Math[makeRound]((height + gutterY) / cellH) : 0;
 
             // estimate size;
             if (!fixSize && setting.cellH == 'auto') {
                 $item.width(cellW * col - gutterX);
                 item.style.height = "";
                 height = $item.height();
-                row = !height ? 0 : Math.round((height + gutterY) / cellH);
+                row = height ? Math.round((height + gutterY) / cellH) : 0;
             }
 
             if (!fixSize && setting.cellW == 'auto') {
                 $item.height(cellH * row - gutterY);
                 item.style.width = "";
                 width = $item.width();
-                col = !width ? 0 : Math.round((width + gutterX) / cellW);
+                col = width ? Math.round((width + gutterX) / cellW) : 0;
             }
 
             // for none resize block;
-            if ((fixSize != null) && (col > runtime.limitCol || row > runtime.limitRow)) {
+            if (isFixedSize && (col > runtime.limitCol || row > runtime.limitRow)) {
                 block = null;
             } else {
                 // get smallest width and smallest height of block;
@@ -135,8 +136,8 @@
                     fixPos = fixPos.split("-");
                     block.y = 1 * fixPos[0];
                     block.x = 1 * fixPos[1];
-                    block.width = fixSize != null ? col : Math.min(col, runtime.limitCol - block.x);
-                    block.height = fixSize != null ? row : Math.min(row, runtime.limitRow - block.y);
+                    block.width = isFixedSize ? col : Math.min(col, runtime.limitCol - block.x);
+                    block.height = isFixedSize ? row : Math.min(row, runtime.limitRow - block.y);
                     var holeId = block.y + "-" + block.x + "-" + block.width + "-" + block.height;
                     if (active) {
                         runtime.holes[holeId] = {
@@ -966,9 +967,7 @@
             container: container,
 
             destroy: function() {
-                var allBlock = container.find(setting.selector).removeAttr('id'),
-                    block = null,
-                    activeBlock = [];
+                var allBlock = container.find(setting.selector).removeAttr('id');
 
                 allBlock.each(function(index, item) {
                     $item = $(item);
