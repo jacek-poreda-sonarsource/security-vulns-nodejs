@@ -955,7 +955,7 @@
 
             */
             appendHoles: function(holes) {
-                var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
+                let newHoles = Array.isArray(holes) ? holes : [holes], h, i;
                 for (i = 0; i < newHoles.length; ++i) {
                     h = newHoles[i];
                     runtime.holes[h.top + "-" + h.left + "-" + h.width + "-" + h.height] = h;
@@ -966,7 +966,7 @@
             container: container,
 
             destroy: function() {
-                var allBlock = container.find(setting.selector).removeAttr('id');
+                let allBlock = container.find(setting.selector).removeAttr('id');
 
                 allBlock.each(function(index, item) {
                     $item = $(item);
@@ -1012,7 +1012,7 @@
 
             fitHeight: function(height) {
 
-                var height = height || container.height() || $W.height();
+                let targetHeight = height || container.height() || $W.height();
 
                 this.fitZone('auto', height);
 
@@ -1021,7 +1021,7 @@
 
             fitWidth: function(width) {
 
-                var width = width || container.width() || $W.width();
+                let targetWidth = width || container.width() || $W.width();
 
                 this.fitZone(width, 'auto');
 
@@ -1158,7 +1158,7 @@
             */
 
             setHoles: function(holes) {
-                var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
+                let newHoles = Array.isArray(holes) ? holes : [holes], h, i;
                 runtime.holes = {};
                 for (i = 0; i < newHoles.length; ++i) {
                     h = newHoles[i];
