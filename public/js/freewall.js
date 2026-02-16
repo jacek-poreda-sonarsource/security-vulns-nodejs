@@ -58,7 +58,7 @@
             var $item = $(item);
             var active = $item.data("active");
             var fixPos = $item.attr('data-position');
-            var fixSize = Number.parseInt($item.attr('data-fixSize'), 10);
+            let fixSize = Number.parseInt($item.attr('data-fixSize'), 10);
             var blockId = runtime.lastId++ + '-' + runtime.totalGrid;
 
             //ignore dragging block;
@@ -72,7 +72,7 @@
 
             Number.isNaN(fixSize) && (fixSize = null);
             (fixSize == null) && (fixSize = setting.fixSize);
-            var makeRound = fixSize ? "ceil" : "round";
+            const makeRound = fixSize ? "ceil" : "round";
             // store original size;
 
             $item.attr('data-height') == null && $item.attr('data-height', $item.height());
@@ -88,8 +88,8 @@
                 height = $item.height();
             }
 
-            var col = width ? Math[makeRound]((width + gutterX) / cellW) : 0;
-            var row = height ? Math[makeRound]((height + gutterY) / cellH) : 0;
+            let col = width ? Math[makeRound]((width + gutterX) / cellW) : 0;
+            let row = height ? Math[makeRound]((height + gutterY) / cellH) : 0;
 
             // estimate size;
             if (!fixSize && setting.cellH == 'auto') {
