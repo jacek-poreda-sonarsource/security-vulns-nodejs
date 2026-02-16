@@ -1160,7 +1160,7 @@
 
             setHoles: function(holes) {
                 var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
-                runtime.holes = {};
+                const newHoles = Array.isArray(holes) ? holes : [holes];
                 for (i = 0; i < newHoles.length; ++i) {
                     h = newHoles[i];
                     runtime.holes[h.top + "-" + h.left + "-" + h.width + "-" + h.height] = h;
