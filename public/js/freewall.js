@@ -966,7 +966,7 @@
             container: container,
 
             destroy: function() {
-                var allBlock = container.find(setting.selector).removeAttr('id');
+                let allBlock = container.find(setting.selector).removeAttr('id');
 
                 allBlock.each(function(index, item) {
                     $item = $(item);
