@@ -1014,7 +1014,7 @@
             fitHeight: function(height) {
 
                 var height = height || container.height() || $W.height();
-
+                const targetHeight = height || container.height() || $W.height();
                 this.fitZone('auto', height);
 
                 runtime.arguments = arguments;
