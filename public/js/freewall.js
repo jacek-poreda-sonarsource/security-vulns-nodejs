@@ -863,7 +863,7 @@
                         for (x = 0; x < width; ++x) {
                             key = (y + top) + "-" + (x + left);
                             oldDropId = runtime.matrix[key];
-                            if (oldDropId && oldDropId != true) {
+                            if (oldDropId && oldDropId !== true) {
                                 $("#" + oldDropId).removeAttr("data-position");
                             }
                         }
@@ -955,7 +955,7 @@
 
             */
             appendHoles: function(holes) {
-                var newHoles = [].concat(holes), h = {}, i;
+                var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
                 for (i = 0; i < newHoles.length; ++i) {
                     h = newHoles[i];
                     runtime.holes[h.top + "-" + h.left + "-" + h.width + "-" + h.height] = h;
@@ -984,7 +984,7 @@
                 if (arguments.length == 0) {
                     runtime.holes = {};
                 } else {
-                    var newHoles = [].concat(holes), h = {}, i;
+                    var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
                     for (i = 0; i < newHoles.length; ++i) {
                         h = newHoles[i];
                         delete runtime.holes[h.top + "-" + h.left + "-" + h.width + "-" + h.height];
@@ -1005,8 +1005,8 @@
                 var events = runtime.events;
                 name = name.toLowerCase();
                 if (events[name] && events[name].length) {
-                    for (var i = 0; i < events[name].length; ++i) {
-                        events[name][i].call(this, object, setting);
+                    for (var handler of events[name]) {
+                        handler.call(this, object, setting);
                     }
                 }
                 return this;
@@ -1014,7 +1014,7 @@
 
             fitHeight: function(height) {
 
-                var height = height ? height : container.height() || $W.height();
+                var height = height || container.height() || $W.height();
 
                 this.fitZone('auto', height);
 
@@ -1023,7 +1023,7 @@
 
             fitWidth: function(width) {
 
-                var width = width ? width : container.width() || $W.width();
+                var width = width || container.width() || $W.width();
 
                 this.fitZone(width, 'auto');
 
@@ -1160,7 +1160,7 @@
             */
 
             setHoles: function(holes) {
-                var newHoles = [].concat(holes), h = {}, i;
+                var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
                 runtime.holes = {};
                 for (i = 0; i < newHoles.length; ++i) {
                     h = newHoles[i];
