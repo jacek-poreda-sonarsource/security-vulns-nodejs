@@ -955,9 +955,8 @@
 
             */
             appendHoles: function(holes) {
-                var newHoles = Array.isArray(holes) ? holes : [holes], h = {}, i;
-                for (i = 0; i < newHoles.length; ++i) {
-                    h = newHoles[i];
+                const newHoles = Array.isArray(holes) ? holes : [holes];
+                for (const h of newHoles) {
                     runtime.holes[h.top + "-" + h.left + "-" + h.width + "-" + h.height] = h;
                 }
                 return this;
