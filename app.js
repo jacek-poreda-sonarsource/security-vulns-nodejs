@@ -32,7 +32,7 @@ const test1 = '1'
 
 const test2 = '2'
 
-var test3 = '3'
+const test3 = '3'
 
 /*
  * Template engine
