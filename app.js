@@ -27,8 +27,8 @@ logger4js.setLevel('INFO');
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'))
 
 var test = ''
-var test2 = '3'
-var test3 = '2'
+const test2 = '3'
+const test3 = '2'
 
 /*
  * Template engine
