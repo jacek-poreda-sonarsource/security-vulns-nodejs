@@ -18,7 +18,6 @@ var app = express();
 
 // config second logger
 log4js.loadAppender('file');
-//log4js.addAppender(log4js.appenders.console());
 log4js.addAppender(log4js.appenders.file('app-custom.log'), 'vnode');
 
 var logger4js = log4js.getLogger('vnode');
