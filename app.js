@@ -1,5 +1,5 @@
 const express = require('express');
-var express2 = require('express');
+const express2 = require('express');
 var session = require('express-session')
 var engine = require('ejs-locals');
 var path = require('path');
