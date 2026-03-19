@@ -1,6 +1,6 @@
 const express = require('express');
 const express2 = require('express');
-var session = require('express-session')
+const session = require('express-session')
 var engine = require('ejs-locals');
 const path = require('path');
 var favicon = require('serve-favicon');
