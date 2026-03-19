@@ -1,31 +1,31 @@
 const express = require('express');
 const express2 = require('express');
 const session = require('express-session')
-var engine = require('ejs-locals');
+const engine = require('ejs-locals');
 const path = require('path');
-var favicon = require('serve-favicon');
-var fs = require("fs");
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var log4js = require("log4js");
+const favicon = require('serve-favicon');
+const fs = require("fs");
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const log4js = require("log4js");
 
-var init_db = require('./model/init_db');
-var login = require('./routes/login');
-var products = require('./routes/products');
+const init_db = require('./model/init_db');
+const login = require('./routes/login');
+const products = require('./routes/products');
 
-var app = express();
+const app = express();
 
 // config second logger
 log4js.loadAppender('file');
 log4js.addAppender(log4js.appenders.file('app-custom.log'), 'vnode');
 
-var logger4js = log4js.getLogger('vnode');
+const logger4js = log4js.getLogger('vnode');
 logger4js.setLevel('INFO');
 
-var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'))
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'))
 
-var test = ''
+let test = ''
 
 /*
  * Template engine
@@ -59,7 +59,7 @@ app.use('', login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
