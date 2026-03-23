@@ -7,7 +7,7 @@ const favicon = require('serve-favicon');
 var fs = require("fs");
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 var log4js = require("log4js");
 
 var init_db = require('./model/init_db');
