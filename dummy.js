@@ -53,7 +53,7 @@ var dummy_info = {
     {
       "name": "HD Vision",
       "description": "Reality is not enough for you? Improve your live with the HD vision glasses.",
-      "price": parseInt(Math.random() * 100),
+      "price": Number.parseInt(Math.random() * 100),
       "image": "product_7.jpg"
     },
     {
