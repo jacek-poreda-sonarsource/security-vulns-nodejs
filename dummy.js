@@ -59,7 +59,7 @@ var dummy_info = {
     {
       "name": "Hangs free",
       "description": "Say goodbye to the cumbersome cables with the authentic hands free.",
-      "price": parseInt(Math.random() * 100),
+      "price": Number.parseInt(Math.random() * 100),
       "image": "product_8.jpg"
     }
   ]
