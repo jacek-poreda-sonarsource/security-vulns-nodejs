@@ -1,4 +1,4 @@
-var config_local = {
+const config_local = {
     // Customer module configs
     "db": {
         "server": "postgres://postgres:postgres@127.0.0.1",
