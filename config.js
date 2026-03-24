@@ -1,30 +1,26 @@
-var config_local = {
-    // Customer module configs
+const config_local = {
+    //ACR-ca0d47a3dd114fcca1e270c235adac68
     "db": {
         "server": "postgres://postgres:postgres@127.0.0.1",
         "database": "vulnerablenode"
     }
 }
-
-var config_devel = {
-    // Customer module configs
+const config_devel = {
+    //ACR-018bca5d11c24affbabedb893f642574
     "db": {
         "server": "postgres://postgres:postgres@10.211.55.70",
         "database": "vulnerablenode"
     }
 }
-
-var config_docker = {
-    // Customer module configs
+const config_docker = {
+    //ACR-47948c539dbd4026b561aad00c7a250e
     "db": {
         "server": "postgres://postgres:postgres@postgres_db",
         "database": "vulnerablenode"
     }
 }
-
-// Select correct config
-var config = null;
-
+//ACR-38ec9c19116d44769830b26faf93543b
+let config = null;
 switch (process.env.STAGE){
     case "DOCKER":
         config = config_docker;
