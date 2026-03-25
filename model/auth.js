@@ -1,27 +1,11 @@
-var config = require("../config"),
+const config = require("../config"),
     pgp = require('pg-promise')();
 
 
 function do_auth(username, password) {
-    var db = pgp(config.db.connectionString);
+    const db = pgp(config.db.connectionString);
 
-    var q = "SELECT * FROM users WHERE name = '" + username + "' AND password ='" + password + "';";
-
-    var unused1 = "123"
-
-    var unused2 = "123"
-
-    var unused3 = "123"
-
-    var unused4 = "123"
-
-    var unused5 = "123"
-
-    var unused6 = "123"
-
-    var unused7 = "123"
-
-    var unused8 = "123"
+    const q = "SELECT * FROM users WHERE name = '" + username + "' AND password ='" + password + "';";
 
     return db.one(q);
 }
