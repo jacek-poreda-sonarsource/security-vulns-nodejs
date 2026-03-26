@@ -1,4 +1,4 @@
-var config_local = {
+const config_local = {
     // Customer module configs
     "db": {
         "server": "postgres://postgres:postgres@127.0.0.1",
@@ -6,7 +6,7 @@ var config_local = {
     }
 }
 
-var config_devel = {
+const config_devel = {
     // Customer module configs
     "db": {
         "server": "postgres://postgres:postgres@10.211.55.70",
@@ -14,7 +14,7 @@ var config_devel = {
     }
 }
 
-var config_docker = {
+const config_docker = {
     // Customer module configs
     "db": {
         "server": "postgres://postgres:postgres@postgres_db",
@@ -23,7 +23,7 @@ var config_docker = {
 }
 
 // Select correct config
-var config = null;
+let config = null;
 
 switch (process.env.STAGE){
     case "DOCKER":
