@@ -1,5 +1,5 @@
 var log4js = require("log4js");
-var url = require("url");
+var url = require("node:url");
 var express = require('express');
 var auth = require("../model/auth");
 var router = express.Router();
