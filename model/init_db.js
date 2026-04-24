@@ -19,8 +19,7 @@ function init_db() {
 
             // Insert dummy users
             var users = dummy.users;
-            for (var i = 0; i < users.length; i ++) {
-                var u = users[i];
+            for (const u of users) {
                 db.one('INSERT INTO users(name, password) values($1, $2)', [u.username, u.password])
                     .then(function () {
                         // success;
@@ -40,8 +39,7 @@ function init_db() {
 
             // Insert dummy products
             var products = dummy.products;
-            for (var i = 0; i < products.length; i ++) {
-                var p = products[i];
+            for (const [i, p] of products.entries()) {
                 db.one('INSERT INTO products(id, name, description, price, image) values($1, $2, $3, $4, $5)', [i, p.name, p.description, p.price, p.image])
                     .then(function () {
                         // success;
