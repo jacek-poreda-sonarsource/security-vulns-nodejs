@@ -1,7 +1,7 @@
 
 function check_logged(req, res) {
 
-    if (req.session.logged == undefined || req.session.logged == false)
+    if (!req.session.logged)
     {
         res.redirect("/login?returnurl=" + req.url);
     }
