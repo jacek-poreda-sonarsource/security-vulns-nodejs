@@ -232,20 +232,7 @@
                 runtime.length -= 1;
 
                 // for hidden block;
-                if (!block) {
-                    //var position = $item.position(); <= make speed so slow;
-                    var height = parseInt(item.style.height) || 0;
-                    var width = parseInt(item.style.width) || 0;
-                    var left = parseInt(item.style.left) || 0;
-                    var top = parseInt(item.style.top) || 0;
-                    $item[method]({
-                        left: left + width / 2,
-                        top: top + height / 2,
-                        width: 0,
-                        height: 0,
-                        opacity: 0
-                    });
-                } else {
+                if (block) {
                     if (block.fixSize) {
                         block.height = 1 * $item.attr("data-height");
                         block.width = 1 * $item.attr("data-width");
@@ -266,6 +253,19 @@
                     if ($item.attr('data-nested') != null) {
                         self.nestedGrid(item, setting);
                     }
+                } else {
+                    //var position = $item.position(); <= make speed so slow;
+                    var height = Number.parseInt(item.style.height) || 0;
+                    var width = Number.parseInt(item.style.width) || 0;
+                    var left = Number.parseInt(item.style.left) || 0;
+                    var top = Number.parseInt(item.style.top) || 0;
+                    $item[method]({
+                        left: left + width / 2,
+                        top: top + height / 2,
+                        width: 0,
+                        height: 0,
+                        opacity: 0
+                    });
                 }
 
                 setting.onBlockFinish.call(item, block, setting);
@@ -451,8 +451,8 @@
 
                         setting.startX = evt.clientX;
                         setting.startY = evt.clientY;
-                        setting.top = parseInt($E.css("top")) || 0;
-                        setting.left = parseInt($E.css("left")) || 0;
+                        setting.top = Number.parseInt($E.css("top")) || 0;
+                        setting.left = Number.parseInt($E.css("left")) || 0;
 
                         $D.bind("mouseup touchend", mouseUp);
                         $D.bind("mousemove touchmove", mouseMove);
@@ -511,10 +511,10 @@
                 style.MozTransition = trans;
             } else if (style.msTransition != null) {
                 style.msTransition = trans;
-            } else if (style.OTransition != null) {
-                style.OTransition = trans;
-            } else {
+            } else if (style.OTransition == null) {
                 style.transition = trans;
+            } else {
+                style.OTransition = trans;
             }
         },
         getFreeArea: function(t, l, runtime) {
