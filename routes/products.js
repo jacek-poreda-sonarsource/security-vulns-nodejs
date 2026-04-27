@@ -1,6 +1,6 @@
 var express = require('express');
 var check_logged = require("./login_check");
-var url = require("url");
+var url = require("node:url");
 var db_products = require("../model/products");
 var router = express.Router();
 
@@ -117,7 +117,7 @@ router.all('/products/buy', function(req, res, next) {
         }
 
         // Check mail format
-        var re = /^([a-zA-Z0-9])(([\-.]|[_]+)?([a-zA-Z0-9]+))*(@){1}[a-z0-9]+[.]{1}(([a-z]{2,3})|([a-z]{2,3}[.]{1}[a-z]{2,3}))$/
+        var re = /^([a-zA-Z0-9])(([\-.]|[_]+)?([a-zA-Z0-9]+))*(@)[a-z0-9]+[.](([a-z]{2,3})|([a-z]{2,3}[.][a-z]{2,3}))$/
         if (!re.test(cart.mail)){
             throw new Error("Invalid mail format");
         }
