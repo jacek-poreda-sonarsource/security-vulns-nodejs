@@ -19,8 +19,7 @@ function init_db() {
 
             // Insert dummy users
             var users = dummy.users;
-            for (var i = 0; i < users.length; i ++) {
-                var u = users[i];
+            for (var u of users) {
                 db.one('INSERT INTO users(name, password) values($1, $2)', [u.username, u.password])
                     .then(function () {
                         // success;
