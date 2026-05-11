@@ -47,13 +47,13 @@ var dummy_info = {
     {
       "name": "Daddle",
       "description": "Be the best father with Daddle: dad's saddle for horsing around.",
-      "price": parseInt(Math.random() * 100),
+      "price": Number.parseInt(Math.random() * 100),
       "image": "product_6.jpg"
     },
     {
       "name": "HD Vision",
       "description": "Reality is not enough for you? Improve your live with the HD vision glasses.",
-      "price": parseInt(Math.random() * 100),
+      "price": Number.parseInt(Math.random() * 100),
       "image": "product_7.jpg"
     },
     {

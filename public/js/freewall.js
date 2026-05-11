@@ -9,10 +9,10 @@
     });
 
     $.isFunction == null && ($.isFunction = function(src) {
-        return src != null && src instanceof Function;
+        return src != null && typeof src === 'function';
     });
 
-    var $W = $(window);
+    var $W = $(globalThis);
     var $D = $(document);
 
     var layoutManager = {
@@ -58,7 +58,7 @@
             var $item = $(item);
             var active = $item.data("active");
             var fixPos = $item.attr('data-position');
-            var fixSize = parseInt($item.attr('data-fixSize'));
+            var fixSize = Number.parseInt($item.attr('data-fixSize'));
             var blockId = runtime.lastId++ + '-' + runtime.totalGrid;
 
             //ignore dragging block;
