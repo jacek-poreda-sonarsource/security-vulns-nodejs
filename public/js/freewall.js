@@ -12,7 +12,7 @@
         return src != null && src instanceof Function;
     });
 
-    var $W = $(window);
+    var $W = $(globalThis);
     var $D = $(document);
 
     var layoutManager = {
