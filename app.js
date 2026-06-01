@@ -6,7 +6,7 @@ const path = require('node:path');
 const favicon = require('serve-favicon');
 var fs = require("fs");
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var log4js = require("log4js");
 
