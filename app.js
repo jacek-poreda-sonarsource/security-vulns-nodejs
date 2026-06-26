@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: 'ñasddfilhpaf78h78032h780g780fg780asg780dsbovncubuyvqy',
+  secret: process.env.SESSION_SECRET,
   cookie: {
     secure: false,
     maxAge: 99999999999
@@ -69,10 +69,11 @@ app.use(function(req, res, next) {
  */
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
+    console.error(err);
     res.status(err.status || 500);
     res.render('error', {
-      message: err.message,
-      error: err
+      message: 'Internal Server Error',
+      error: {}
     });
   });
 }
@@ -82,7 +83,7 @@ if (app.get('env') === 'development') {
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
-    message: err.message,
+    message: 'Internal Server Error',
     error: {}
   });
 });
