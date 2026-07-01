@@ -27,6 +27,12 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'))
 
 var test = ''
 
+var test1 = ''
+
+var test2 = ''
+
+var test3 = ''
+
 /*
  * Template engine
  */
